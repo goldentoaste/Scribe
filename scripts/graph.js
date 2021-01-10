@@ -11,6 +11,7 @@ function dateToMD(date) {
 
 //arr, arr, date, int
 function initGraph(targetData, currentData, startDate, duration) {
+    console.log();
     var data = {
         labels:[],
         datasets:[
@@ -44,7 +45,8 @@ function initGraph(targetData, currentData, startDate, duration) {
             yAxes: [{
                 stacked: false,
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    suggestedMax: (Math.max(...currentData) * 1.25)
                 }
             }]
         },
