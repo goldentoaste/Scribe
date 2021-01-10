@@ -29,9 +29,9 @@
   </head>
 
   <body>
-    <div class="uk-container">
-      <div class="uk-grid-medium" uk-grid>
-        <div class="uk-width-3-6">
+    <div class="uk-container" style="overflow-x: scroll">
+      <div class="uk-grid-medium uk-grid-match uk-margin-top" uk-grid>
+        <div class="uk-width-1-2">
           <div>
             <div class="uk-flex uk-flex-middle">
               <div>
@@ -41,7 +41,7 @@
               </div>
               <div>
                 <button
-                  class="uk-button uk-button-primary uk-margin-small-left"
+                  class="uk-button uk-button-secondary uk-margin-small-left"
                   id="logout-button"
                 >
                   Log out
@@ -49,13 +49,30 @@
               </div>
             </div>
 
+            <div>
+              <button
+                style="font-family: 'Raleway' !important"
+                class="uk-button uk-width-1-1 uk-button-primary uk-margin-medium-bottom"
+                id="newproject-button"
+              >
+                Create new writing project
+              </button>
+            </div>
+
             <div class="uk-margin-medium-bottom">
               <h3><span class="user-name">User</span>'s writing projects</h3>
-              <div class="uk-flex-center uk-flex uk-overflow-auto">
+              <div class="uk-overflow-auto uk-flex">
+                <div
+                  style="margin: 8px"
+                  class="uk-card uk-height-small uk-width-small uk-card-default uk-card-body"
+                >
+                  <h5 style="text-align: center">Writing title here</h5>
+                </div>
+
                 <div>
                   <div
                     style="margin: 8px"
-                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-card-default uk-card-body"
+                    class="uk-card uk-height-small uk-width-small uk-card-default uk-card-body"
                   >
                     <h5 style="text-align: center">Writing title here</h5>
                   </div>
@@ -64,7 +81,7 @@
                 <div>
                   <div
                     style="margin: 8px"
-                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-card-default uk-card-body"
+                    class="uk-card uk-height-small uk-width-small uk-card-default uk-card-body"
                   >
                     <h5 style="text-align: center">Writing title here</h5>
                   </div>
@@ -73,7 +90,7 @@
                 <div>
                   <div
                     style="margin: 8px"
-                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-margin-small uk-card-default uk-card-body"
+                    class="uk-card uk-height-small uk-width-small uk-card-default uk-card-body"
                   >
                     <h5 style="text-align: center">Writing title here</h5>
                   </div>
@@ -82,28 +99,17 @@
                 <div>
                   <div
                     style="margin: 8px"
-                    class="uk-card uk-height-small uk-width-small uk-margin-small uk-margin-small-right uk-card-default uk-card-body"
+                    class="uk-card uk-height-small uk-width-small uk-card-default uk-card-body"
                   >
                     <h5 style="text-align: center">Writing title here</h5>
                   </div>
-                </div>
-
-                <div>
-                  <button
-                    style="margin: 8px"
-                    style="font-family: 'Raleway' !important"
-                    class="uk-button uk-height-small uk-width-small uk-margin-small-right uk-button-primary"
-                    id="newproject-button"
-                  >
-                    Create new writing project
-                  </button>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="uk-width-3-6">
+        <div class="uk-width-1-2">
           <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
             <h2 class="uk-card-title">User's stats for *story here*</h2>
             <p><b>Total words typed: </b>*number* words</p>
