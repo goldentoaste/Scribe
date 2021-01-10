@@ -23,41 +23,55 @@
 </head>
 
 <body>
-  <div class="uk-container">
-    <div class="uk-grid-medium" uk-grid>
-      <div class="uk-width-3-6">
+  <div class="uk-container" style="overflow-x: scroll">
+    <div class="uk-grid-medium uk-grid-match uk-margin-top" uk-grid>
+      <div class="uk-width-1-2">
         <div>
           <div class="uk-flex uk-flex-middle">
             <div>
               <h1 style="margin: 0" class="uk-margin-small-right">
-                Hello, user!
+                Hello, <span class="user-name" id="title-name">user</span>!
               </h1>
             </div>
             <div>
-              <button class="uk-button uk-button-primary uk-margin-small-left" id="logout-button">
+              <button class="uk-button uk-button-secondary uk-margin-small-left" id="logout-button">
                 Log out
               </button>
             </div>
           </div>
 
+          <div>
+            <button style="font-family: 'Raleway' !important"
+              class="uk-button uk-width-1-1 uk-button-primary uk-margin-medium-bottom" id="newproject-button">
+              Create new writing project
+            </button>
+          </div>
+          <div>
+            <button style="font-family: 'Raleway' !important"
+              class="uk-button uk-width-1-1 uk-button-primary uk-margin-medium-bottom" id="add-button">
+              Add words for today :3
+            </button>
+          </div>
+
+          <div>
+            <button style="font-family: 'Raleway' !important"
+              class="uk-button uk-width-1-1 uk-button-primary uk-margin-medium-bottom" id="delete-button">
+              Delete this project(cannot be undone)
+            </button>
+          </div>
+
+
           <div class="uk-margin-medium-bottom">
-            <h3>User's writing projects</h3>
-            <div class="uk-flex-center uk-flex uk-overflow-auto" id="project-container">
+            <h3><span class="user-name">User</span>'s writing projects</h3>
+            <div class="uk-overflow-auto uk-flex " id="project-container">
 
 
-              <div>
-                <button style="margin: 8px" style="font-family: 'Raleway' !important"
-                  class="uk-button uk-height-small uk-width-small uk-margin-small-right uk-button-primary"
-                  id="newproject-button">
-                  Create new writing project
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="uk-width-3-6">
+      <div class="uk-width-1-2">
         <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
           <h2 class="uk-card-title">User's stats for *story here*</h2>
           <p><b>Total words typed: </b>*number* words</p>
@@ -70,10 +84,10 @@
     </div>
 
     <div class="uk-container uk-container-large">
-      <div class="uk-position-center">
-        <!--change width/height here!-->
-        <canvas id="chart" width=800 height=400></canvas>
-      </div>
+      <!-- <div class="uk-position-center"></div> -->
+      <!--change width/height here!-->
+      <canvas id="chart" width="800" height="400"></canvas>
+
     </div>
 
     <!-- <div style="background-color: #00a896" class="uk-width-1-1">
@@ -107,5 +121,6 @@
   db.settings({ timestampsInSnapshots: true });
 </script>
 <script src="scripts/graph.js"></script>
+<script src="scripts/home.js"></script>
 
 </html>
