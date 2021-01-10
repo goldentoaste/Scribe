@@ -29,10 +29,92 @@
   </head>
 
   <body>
-    <h1>Hello, user!</h1>
-    <button class="uk-button uk-button-primary" id="logout-button">
-      Log out
-    </button>
+    <div class="uk-container">
+      <div class="uk-grid-medium" uk-grid>
+        <div class="uk-width-3-6">
+          <div>
+            <div class="uk-flex uk-flex-middle">
+              <div>
+                <h1 style="margin: 0" class="uk-margin-small-right">
+                  Hello, user!
+                </h1>
+              </div>
+              <div>
+                <button
+                  class="uk-button uk-button-primary uk-margin-small-left"
+                  id="logout-button"
+                >
+                  Log out
+                </button>
+              </div>
+            </div>
+
+            <div class="uk-margin-medium-bottom">
+              <h3>User's writing projects</h3>
+              <div class="uk-flex-center uk-flex uk-overflow-auto">
+                <div>
+                  <div
+                    style="margin: 8px"
+                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-card-default uk-card-body"
+                  >
+                    <h5 style="text-align: center">Writing title here</h5>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="margin: 8px"
+                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-card-default uk-card-body"
+                  >
+                    <h5 style="text-align: center">Writing title here</h5>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="margin: 8px"
+                    class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-margin-small uk-card-default uk-card-body"
+                  >
+                    <h5 style="text-align: center">Writing title here</h5>
+                  </div>
+                </div>
+
+                <div>
+                  <div
+                    style="margin: 8px"
+                    class="uk-card uk-height-small uk-width-small uk-margin-small uk-margin-small-right uk-card-default uk-card-body"
+                  >
+                    <h5 style="text-align: center">Writing title here</h5>
+                  </div>
+                </div>
+
+                <div>
+                  <button
+                    style="margin: 8px"
+                    style="font-family: 'Raleway' !important"
+                    class="uk-button uk-height-small uk-width-small uk-margin-small-right uk-button-primary"
+                    id="logout-button"
+                  >
+                    Create new writing project
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="uk-width-3-6">
+          <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m">
+            <h2 class="uk-card-title">User's stats</h2>
+            <b></b>
+          </div>
+        </div>
+      </div>
+
+      <div style="background-color: #00a896" class="uk-width-1-1">
+        <canvas></canvas>
+      </div>
+    </div>
   </body>
 
   <script src="scripts/index.js"></script>
