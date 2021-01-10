@@ -1,35 +1,26 @@
 
-var ctx = document.getElementById('chart').getContext('2d');
+
 
 datas = []
 graphDatas = []
-var options = {
-    tooltips: {
-        mode: 'index',
-        intersect: false
-    },
-    responsive: true,
-    scales: {
-        xAxes: [{
-            stacked: true,
-        }],
-        yAxes: [{
-            stacked: false,
-            ticks: {
-                beginAtZero: true,
-                
-            }
-        }]
-    },
-    
-};
 
-var chart = new Chart(ctx, 
-    {
-    type : 'bar',
-    data : graphDatas,
-    options : options
-});
+
+
+// if (ctx){
+//     //for init only
+// auth.onAuthStateChanged(async user => {
+//     if (user){
+//         //await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
+//         await loadProjects(user);
+//         displayGraph(0);
+        
+//     }
+// })
+
+// }
+
+
+
 function dateToMD(date) {
     var strArray=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     var d = date.getDate();
@@ -41,6 +32,7 @@ function dateToMD(date) {
 
 //arr, arr, date, int
 function displayGraph(index) {
+    var ctx = document.getElementById('chart')
     var project = datas[index];
     log(datas);
     var data = {
@@ -62,6 +54,26 @@ function displayGraph(index) {
         }
     ]
     };
+    var options = {
+        tooltips: {
+            mode: 'index',
+            intersect: false
+        },
+        responsive: true,
+        scales: {
+            xAxes: [{
+                stacked: true,
+            }],
+            yAxes: [{
+                stacked: false,
+                ticks: {
+                    beginAtZero: true,
+                    
+                }
+            }]
+        },
+        
+    };
     log(project['currentWords']);
     options['scales']['yAxes'][0]['ticks']['suggestedMax'] = Math.max(...project['targetWords']) * 1.25;
     var i;
@@ -71,8 +83,8 @@ function displayGraph(index) {
     }
     
     graphDatas = data;
-    chart = new Chart(ctx, 
-        {
+    var chart = new Chart(ctx.getContext('2d'), 
+        {  
         type : 'bar',
         data : graphDatas,
         options : options
@@ -93,9 +105,35 @@ async function loadProjects(user){
 
             })
         });
+    displayGraph(0);
+}
+const newButt = document.getElementById("newproject-button");
 
+if (newButt){
+    newButt.addEventListener('click',e=>{
+        window.location.href = 'newproject.html';
+    });
 }
 
+const createButton = document.getElementById("create-button");
+
+if (createButton){
+    log('entering on click stff');
+    createButton.addEventListener('click', async(e) =>{
+
+        log('entering on click button');
+        const title = document.getElementById('newproject-title').value;
+        const goal = document.getElementById('newproject-goal').value;
+        const days = document.getElementById('newproject-days').value;
+        const date = document.getElementById('newproject-date').value;
+
+        await makeNewProject(parseInt(goal), parseInt(days),new Date(date).getTime(), title);
+
+        window.location.href ="home.html";
+
+        displayGraph(0);
+    });
+}
 
 
 async function makeNewProject(wordCount, days, startDate, projectName){
@@ -120,15 +158,6 @@ async function makeNewProject(wordCount, days, startDate, projectName){
 }
 
 
-//for init only
-auth.onAuthStateChanged(async user => {
-    if (user){
-        await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
-        //await loadProjects(user);
-        displayGraph(0);
-        
-    }
-})
 
 
 function log(stuff){
