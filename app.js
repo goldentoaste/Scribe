@@ -1,6 +1,7 @@
+var firebase = require('firebase');
+var firebaseui = require('firebaseui');
 
-
-function stuff() {
+function initChart() {
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
