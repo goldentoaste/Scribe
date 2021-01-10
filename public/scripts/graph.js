@@ -14,11 +14,43 @@ auth.onAuthStateChanged(async user => {
         await loadProjects(user);
         if (datas.length > 0){
             displayGraph(0);
+            
         }
     }
 })
 
 }
+
+
+function updateBoard(){
+    const container = document.getElementById("board-container");
+    project = datas[currentProject];
+
+    var total = 0;
+    var today = new Date().getTime();
+    var index = -1;
+    for(var i = 0; i < project['days']; i++){
+        total += project['currentWords'][i];
+        const curTime = project['startDate'] + 86400000 * i;
+        if (index == -1 && today < curTime){
+            index = i - 1;
+        }
+    }
+    var todayAmount = index == -1? 0: project['currentWords'][index];
+
+
+
+    container.innerHTML = `
+    <h2 class="uk-card-title">User's stats for ${project['name']}</h2>
+          <p><b>Total words typed: </b>${total} words</p>
+          <p><b>Words typed today: </b>${todayAmount} words</p>
+          <p><b>Average daily word count until goal: </b>${project['targetWords'][index+1]} words</p>
+          <p><b>Words to type to reach goal: </b>${project['totalWordCount'] - total} words</p>
+          <p><b>Most words typed in one day: </b>${Math.max(...project['currentWords'])} words.</p>`;
+}
+
+
+
 
 const addButton = document.getElementById('add-button')
 if (addButton){
@@ -30,6 +62,7 @@ if (addButton){
         }
     });
 }
+
 function updateToday(wordsWrote){
     var project = datas[currentProject];
     const today = new Date().getTime();
@@ -41,7 +74,7 @@ function updateToday(wordsWrote){
     var todayIndex = 0;
     for (var i = 0; i < project['days']; i++){
         if (!pastToday){
-            const curTime = project['startDate'] + 86400000 * (i - 1);
+            const curTime = project['startDate'] + 86400000 * (i+ 1);
             if(today < curTime){
                 pastToday = true;
                 project['currentWords'][i] += parseInt(wordsWrote);
@@ -49,7 +82,7 @@ function updateToday(wordsWrote){
                 if (diff > 0){
                     missingWords -= diff;
                 }
-                todayIndex = i;
+                todayIndex = i - 1;
             }
             else{
                 const diff = - project['currentWords'][i] + project['targetWords'][i];
@@ -73,6 +106,7 @@ function updateToday(wordsWrote){
         targetWords:project['targetWords']
     });
     displayGraph(currentProject);
+    updateBoard();
 }
 
 
@@ -148,7 +182,6 @@ function displayGraph(index) {
         type : 'bar',
         data : data,
         options : options,
-        events :['click']
     });
     }
     else{
@@ -157,10 +190,7 @@ function displayGraph(index) {
     }
 
     
-
-    ctx.onclick = (event) =>{
-        log(chart.getElementsAtEvent(event));
-    };
+    updateBoard();
   
 
 }
