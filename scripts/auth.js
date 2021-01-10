@@ -18,7 +18,7 @@ if (signupButton != null){
         auth.createUserWithEmailAndPassword(email, pass).then(cred => {
             cred.user.updateProfile({displayName:name});
             //redir to main page
-            window.location.href ="project.html";
+            window.location.href ="home.html";
         }).catch(err =>{
                 window.alert(`${err.message}"`);
         });
@@ -34,7 +34,7 @@ if (loginButton != null){
         console.log('entered event');
         auth.signInWithEmailAndPassword(email, pass).then(cred =>{
             console.log(cred.user);
-            window.location.href ="graphTestings.html";
+            window.location.href ="home.html";
         }).catch(err=>{
                 console.log(err.message)
             });
