@@ -1,65 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 <canvas id="myChart" width="400" height="400"></canvas>
 <script src="app.js"></script> -->
 
-  <head>
-    <title>Scribe</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+<head>
+  <title>Scribe</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- UIkit CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/css/uikit.min.css"
-    />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/uikit.css" />
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/css/uikit.min.css" />
+  <link rel="stylesheet" href="styles/index.css" />
+  <link rel="stylesheet" href="styles/uikit.css" />
 
-    <!-- UIkit JS -->
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit.min.js%22%3E"></script>
-    <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit-icons.min.js%22%3E"></script>
-    <script src="scripts/uikit.min.js"></script>
-    <script src="scripts/uikit-icons.min.js"></script>
-  </head>
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit.min.js%22%3E"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.9/dist/js/uikit-icons.min.js%22%3E"></script>
+  <script src="scripts/uikit.min.js"></script>
+  <script src="scripts/uikit-icons.min.js"></script>
+</head>
 
-  <body>
-    <nav class="uk-navbar-container uk-margin uk-navbar">
-      <div class="uk-navbar-center">
-        <div class="uk-navbar-center-left">
-          <div>
-            <a
-              class="uk-navbar-item uk-animation-slide-left"
-              href="#presentation"
-              >Presentation</a
-            >
-            <a class="uk-navbar-item uk-animation-slide-left" href="#features"
-              >Features</a
-            >
-          </div>
-        </div>
-
-        <a class="uk-navbar-item uk-logo" href="#">Scribe</a>
-
-        <div class="uk-navbar-center-right">
-          <div>
-            <a
-              class="uk-navbar-item uk-animation-slide-right"
-              href="#technologies"
-              >Technologies</a
-            >
-            <a class="uk-navbar-item uk-animation-slide-right" href="#about"
-              >About</a
-            >
-          </div>
+<body>
+  <nav class="uk-navbar-container uk-margin uk-navbar">
+    <div class="uk-navbar-center">
+      <div class="uk-navbar-center-left">
+        <div>
+          <a class="uk-navbar-item uk-animation-slide-left" href="#presentation">Presentation</a>
+          <a class="uk-navbar-item uk-animation-slide-left" href="#features">Features</a>
         </div>
       </div>
-    </nav>
+
+      <a class="uk-navbar-item uk-logo" href="#">Scribe</a>
+
+      <div class="uk-navbar-center-right">
+        <div>
+          <a class="uk-navbar-item uk-animation-slide-right" href="#technologies">Technologies</a>
+          <a class="uk-navbar-item uk-animation-slide-right" href="#about">About</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
     <div class="uk-grid-small uk-margin-large-bottom" uk-grid>
       <div class="uk-width-1-2">
@@ -92,14 +74,22 @@
                 padding-bottom: 8px;
                 color: #00a896;
                 text-shadow: none;
-              "
-              class="type1 uk-animation-slide-left uk-width-1-3 uk-text-large uk-button uk-button-primary"
-            >
-              Sign up
-            </button>
-          </div>
+              " class="type1 uk-animation-slide-left uk-width-1-3 uk-text-large uk-button uk-button-primary">
+            Sign up
+          </button>
+          <button id="login-button" style="
+                background: transparent;
+                border: none;
+                padding-top: 8px;
+                padding-bottom: 8px;
+                color: #00a896;
+                text-shadow: none;
+              " class="type1 uk-animation-slide-left uk-width-1-3 uk-text-large uk-button uk-button-primary">
+            Log in
+          </button>
         </div>
       </div>
+    </div>
 
       <div class="uk-width-1-2">
         <div class="uk-margin-large-right">
@@ -111,79 +101,79 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Features -->
-    <div id="features">
-      <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
-        Features
-      </h2>
-      <div
-        class="uk-grid-match uk-grid-small uk-child-width-expand@s uk-margin-medium-left uk-margin-large-bottom uk-margin-medium-right"
-        uk-grid
-      >
-        <div class="uk-width-1-3">
-          <div class="uk-card uk-card-body">
-            <img src="images/Creativity-pana.svg" />
-            <h3 style="text-align: center" class="uk-card-title">
-              Built for you.
-            </h3>
-            <p style="text-align: center">
-              With no limit on the number of writing projects you can have,
-              Scribe helps you in finishing your creative efforts.
-            </p>
-          </div>
+  <!-- Features -->
+  <div id="features">
+    <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
+      Features
+    </h2>
+    <div
+      class="uk-grid-match uk-grid-small uk-child-width-expand@s uk-margin-medium-left uk-margin-large-bottom uk-margin-medium-right"
+      uk-grid>
+      <div class="uk-width-1-3">
+        <div class="uk-card uk-card-body">
+          <img src="images/Creativity-pana.svg" />
+          <h3 style="text-align: center" class="uk-card-title">
+            Built for you.
+          </h3>
+          <p style="text-align: center">
+            With no limit on the number of writing projects you can have,
+            Scribe helps you in finishing your creative efforts.
+          </p>
         </div>
+      </div>
 
-        <div class="uk-width-1-3">
-          <div class="uk-card uk-card-body">
-            <img src="images/Responsive-pana.svg" />
-            <h3 style="text-align: center" class="uk-card-title">
-              Accessible whenever.
-            </h3>
-            <p style="text-align: center">
-              With functional capabilities in both mobile and web, Scribe is
-              there for you whenever you need it.
-            </p>
-          </div>
+      <div class="uk-width-1-3">
+        <div class="uk-card uk-card-body">
+          <img src="images/Responsive-pana.svg" />
+          <h3 style="text-align: center" class="uk-card-title">
+            Accessible whenever.
+          </h3>
+          <p style="text-align: center">
+            With functional capabilities in both mobile and web, Scribe is
+            there for you whenever you need it.
+          </p>
         </div>
+      </div>
 
-        <div class="uk-width-1-3">
-          <div class="uk-card uk-card-body">
-            <img src="images/Data-pana.svg" />
-            <h3 style="text-align: center" class="uk-card-title">
-              Easy to use.
-            </h3>
-            <p style="text-align: center">
-              With graphs and charts that track your writing progress, Scribe is
-              designed provide you statistics and visual representations of your
-              writing journey.
-            </p>
-          </div>
+      <div class="uk-width-1-3">
+        <div class="uk-card uk-card-body">
+          <img src="images/Data-pana.svg" />
+          <h3 style="text-align: center" class="uk-card-title">
+            Easy to use.
+          </h3>
+          <p style="text-align: center">
+            With graphs and charts that track your writing progress, Scribe is
+            designed provide you statistics and visual representations of your
+            writing journey.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Presentation -->
-    <div id="presentation">
-      <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
-        Video
-      </h2>
-      <div class="uk-grid uk-margin-large-bottom">
-        <div class="uk-width-1">
-          <div style="text-align: center">
-            <h3 class="uk-margin-large-left uk-margin-large-right">
-              Featuring Scribe.
-            </h3>
-            <p class="uk-margin-large-left uk-margin-large-right">
-              Two rookie computer science students with endless ambition and
-              twenty-four hours to create a viable product.<br />
-              The odds were against them from the very beginning.<br />
-              But somehow, they prevailed.
-            </p>
-          </div>
+  <!-- Presentation -->
+  <div id="presentation">
+    <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
+      Video
+    </h2>
+    <div class="uk-grid uk-margin-large-bottom">
+      <div class="uk-width-1">
+        <div style="text-align: center">
+          <h3 class="uk-margin-large-left uk-margin-large-right">
+            Featuring Scribe.
+          </h3>
+          <p class="uk-margin-large-left uk-margin-large-right">
+            Two rookie computer science students with endless ambition and
+            twenty-four hours to create a viable product.<br />
+            The odds were against them from the very beginning.<br />
+            But somehow, they prevailed.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- About -->
     <div id="about">
@@ -213,149 +203,124 @@
                 </div>
               </div>
             </div>
-            <div class="uk-card-body">
-              <p>
-                A mathematician, programmer, and Teemo main with a penchant for
-                playing video games and drinking too much Coke.
-              </p>
-            </div>
-            <div class="uk-card-footer">
-              <a href="https://github.com/goldentoaste" class="type1">Github</a>
-            </div>
+          </div>
+          <div class="uk-card-body">
+            <p>
+              A mathematician, programmer, and Teemo main with a penchant for
+              playing video games and drinking too much Coke.
+            </p>
+          </div>
+          <div class="uk-card-footer">
+            <a href="https://github.com/goldentoaste" class="type1">Github</a>
           </div>
         </div>
+      </div>
 
-        <div class="uk-width-1-2">
-          <div class="uk-card uk-card-default uk-border-rounded uk-width-1-2@m">
-            <div class="uk-card-header">
-              <div class="uk-grid-small uk-flex-middle" uk-grid>
-                <div class="uk-width-auto">
-                  <img
-                    class="uk-border-circle"
-                    width="100"
-                    height="100"
-                    src="images/logo/nwdn-file-temp-1608355865917.JPG"
-                  />
-                </div>
-                <div class="uk-width-expand">
-                  <h3 class="uk-card-title uk-margin-remove-bottom">
-                    Christina Raganit
-                  </h3>
-                </div>
+      <div class="uk-width-1-2">
+        <div class="uk-card uk-card-default uk-border-rounded uk-width-1-2@m">
+          <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+              <div class="uk-width-auto">
+                <img class="uk-border-circle" width="100" height="100"
+                  src="images/logo/nwdn-file-temp-1608355865917.JPG" />
+              </div>
+              <div class="uk-width-expand">
+                <h3 class="uk-card-title uk-margin-remove-bottom">
+                  Christina Raganit
+                </h3>
               </div>
             </div>
-            <div class="uk-card-body">
-              <p>
-                An aspiring UI/UX designer with a passion for writing fantasy
-                novels, playing guitar, and reading everything there is to know
-                about Demacia.
-              </p>
-            </div>
-            <div class="uk-card-footer">
-              <a href="https://github.com/christinaraganit" class="type1"
-                >Github</a
-              >
-            </div>
+          </div>
+          <div class="uk-card-body">
+            <p>
+              An aspiring UI/UX designer with a passion for writing fantasy
+              novels, playing guitar, and reading everything there is to know
+              about Demacia.
+            </p>
+          </div>
+          <div class="uk-card-footer">
+            <a href="https://github.com/christinaraganit" class="type1">Github</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Technologies -->
-    <div id="technologies">
-      <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
-        Technologies
-      </h2>
-      <div
-        class="uk-grid-small uk-grid-match uk-child-width-expand@s uk-margin-medium-left uk-margin-large-bottom uk-margin-medium-right"
-        uk-grid
-      >
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/html5-resized.png"
-            />
-          </div>
+  <!-- Technologies -->
+  <div id="technologies">
+    <h2 style="text-align: center; font-weight: bold" class="uk-text-primary">
+      Technologies
+    </h2>
+    <div
+      class="uk-grid-small uk-grid-match uk-child-width-expand@s uk-margin-medium-left uk-margin-large-bottom uk-margin-medium-right"
+      uk-grid>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/html5-resized.png" />
         </div>
+      </div>
 
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/css3-resized.png"
-            />
-          </div>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/css3-resized.png" />
         </div>
+      </div>
 
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/uikit-resized.png"
-            />
-          </div>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/uikit-resized.png" />
         </div>
+      </div>
 
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/chartjs-resized.png"
-            />
-          </div>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/chartjs-resized.png" />
         </div>
+      </div>
 
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/firebase-resized.png"
-            />
-          </div>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/firebase-resized.png" />
         </div>
+      </div>
 
-        <div class="uk-width-1-6">
-          <div class="uk-section-xsmall" style="text-align: center">
-            <img
-              class="uk-height-max-small"
-              src="images/logo/vscode-resized.png"
-            />
-          </div>
+      <div class="uk-width-1-6">
+        <div class="uk-section-xsmall" style="text-align: center">
+          <img class="uk-height-max-small" src="images/logo/vscode-resized.png" />
         </div>
       </div>
     </div>
+  </div>
 
-    <p
-      class="uk-text-italic uk-margin-large-left uk-margin-large-right uk-margin-large-bottom"
-      style="text-align: center"
-    >
-      “There is no greater agony than bearing an untold story inside you.” -
-      Maya Angelou
-    </p>
-  </body>
-  <script src="scripts/index.js"></script>
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
+  <p class="uk-text-italic uk-margin-large-left uk-margin-large-right uk-margin-large-bottom"
+    style="text-align: center">
+    “There is no greater agony than bearing an untold story inside you.” -
+    Maya Angelou
+  </p>
+</body>
+<script src="scripts/index.js"></script>
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.2/firebase-analytics.js"></script>
 
-  <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyCGfbVZmaLTIE9YfhrDoZe21w-7vUqnuSo",
-      authDomain: "scribe-a7aff.firebaseapp.com",
-      databaseURL: "https://scribe-a7aff-default-rtdb.firebaseio.com",
-      projectId: "scribe-a7aff",
-      appId: "1:400216627071:web:1139752f762da30ce4ac4a",
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCGfbVZmaLTIE9YfhrDoZe21w-7vUqnuSo",
+    authDomain: "scribe-a7aff.firebaseapp.com",
+    databaseURL: "https://scribe-a7aff-default-rtdb.firebaseio.com",
+    projectId: "scribe-a7aff",
+    appId: "1:400216627071:web:1139752f762da30ce4ac4a",
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 
-    const auth = firebase.auth();
-    const db = firebase.firestore();
+  const auth = firebase.auth();
+  const db = firebase.firestore();
 
-    db.settings({ timestampsInSnapshots: true });
-  </script>
+  db.settings({ timestampsInSnapshots: true });
+</script>
+
 </html>
