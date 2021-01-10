@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@300&display=swap%27');
+
+* {
+font-family: 'Open Sans', sans-serif;
+font-family: 'Raleway', sans-serif;
+}
+
+.uk-button {
+    font-family: 'Open Sans';
+}
