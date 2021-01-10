@@ -27,20 +27,24 @@
     <nav class="uk-navbar-container uk-margin" uk-navbar>
         <div class="uk-navbar-center">
 
-            <div class="uk-navbar-center-left"><div>
-                <ul class="uk-navbar-nav">
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Presentation</a></li>
-                </ul>
-            </div></div>
+            <div class="uk-navbar-center-left">
+                <div>
+                    <ul class="uk-navbar-nav">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Presentation</a></li>
+                    </ul>
+                </div>
+            </div>
             <a class="uk-navbar-item uk-logo" href="#">Logo</a>
-            <div class="uk-navbar-center-right"><div>
-                <ul class="uk-navbar-nav">
-                    <li><a href="#">Technologies</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </div></div>
-    
+            <div class="uk-navbar-center-right">
+                <div>
+                    <ul class="uk-navbar-nav">
+                        <li><a href="#">Technologies</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </nav>
 </body>
@@ -53,20 +57,21 @@
 
 <script>
 
-  var firebaseConfig = {
-    apiKey: "AIzaSyCGfbVZmaLTIE9YfhrDoZe21w-7vUqnuSo",
-    authDomain: "scribe-a7aff.firebaseapp.com",
-    databaseURL: "https://scribe-a7aff-default-rtdb.firebaseio.com",
-    projectId: "scribe-a7aff",
-  };
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
-  firebase.analytics();
+    var firebaseConfig = {
+        apiKey: "AIzaSyCGfbVZmaLTIE9YfhrDoZe21w-7vUqnuSo",
+        authDomain: "scribe-a7aff.firebaseapp.com",
+        databaseURL: "https://scribe-a7aff-default-rtdb.firebaseio.com",
+        projectId: "scribe-a7aff",
+        appId: "1:400216627071:web:1139752f762da30ce4ac4a",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
 
-  const auth = firebase.auth();
-  const db = firebase.firestore();
+    const auth = firebase.auth();
+    const db = firebase.firestore();
 
-  db.settings({ timestampsInSnapshots: true });
+    db.settings({ timestampsInSnapshots: true });
 </script>
 
 </html>
