@@ -20,6 +20,7 @@ signupButton.addEventListener("click", e => {
         console.log(cred.user);
         
         //redir to main page
+        window.location.replace("app.html");
     }).catch(err =>{
             window.alert(`${err.message}"`);
     });
