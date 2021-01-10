@@ -6,18 +6,18 @@ graphDatas = []
 
 
 
-// if (ctx){
-//     //for init only
-// auth.onAuthStateChanged(async user => {
-//     if (user){
-//         //await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
-//         await loadProjects(user);
-//         displayGraph(0);
+if (document.getElementById('chart')){
+    //for init only
+auth.onAuthStateChanged(async user => {
+    if (user){
+        //await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
+        await loadProjects(user);
+        displayGraph(0);
         
-//     }
-// })
+    }
+})
 
-// }
+}
 
 
 
@@ -105,7 +105,6 @@ async function loadProjects(user){
 
             })
         });
-    displayGraph(0);
 }
 const newButt = document.getElementById("newproject-button");
 
@@ -126,12 +125,9 @@ if (createButton){
         const goal = document.getElementById('newproject-goal').value;
         const days = document.getElementById('newproject-days').value;
         const date = document.getElementById('newproject-date').value;
-
+        
         await makeNewProject(parseInt(goal), parseInt(days),new Date(date).getTime(), title);
-
         window.location.href ="home.html";
-
-        displayGraph(0);
     });
 }
 
