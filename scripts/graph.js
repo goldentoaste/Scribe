@@ -18,6 +18,10 @@ auth.onAuthStateChanged(async user => {
 
 }
 
+function recalculate(){
+
+}
+
 
 
 function dateToMD(date) {
@@ -90,8 +94,8 @@ function displayGraph(index) {
         events :['click']
     });
 
-    chart.onclick = (event) =>{
-        log(event);
+    ctx.onclick = (event) =>{
+        log(chart.getElementsAtEvent(event));
     };
   
 
@@ -105,6 +109,7 @@ async function loadProjects(user){
         .then(snapshot =>{
             snapshot.forEach(doc => {
                 data = doc.data();
+                data["id"] = doc.id; 
                 datas.push(data);
 
             })
