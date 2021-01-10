@@ -13,7 +13,6 @@ auth.onAuthStateChanged(async user => {
         //await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
         await loadProjects(user);
         displayGraph(0);
-        
     }
 })
 
@@ -87,8 +86,13 @@ function displayGraph(index) {
         {  
         type : 'bar',
         data : graphDatas,
-        options : options
+        options : options,
+        events :['click']
     });
+
+    chart.onclick = (event) =>{
+        log(event);
+    };
   
 
 }
@@ -131,6 +135,14 @@ if (createButton){
     });
 }
 
+const logoutButton = document.getElementById("logout-button");
+if (logoutButton){
+    logoutButton.addEventListener('click', (e) =>{
+        auth.signOut();
+        window.location.href ="index.html";
+
+    });
+}
 
 async function makeNewProject(wordCount, days, startDate, projectName){
     const avg = Math.round(wordCount/days);
