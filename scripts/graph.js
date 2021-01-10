@@ -1,9 +1,9 @@
 
 
 
-datas = []
-graphDatas = []
-
+var datas = []
+var graphDatas = []
+var currentProject = 0
 
 
 if (document.getElementById('chart')){
@@ -12,15 +12,15 @@ auth.onAuthStateChanged(async user => {
     if (user){
         //await makeNewProject(80000, 30, new Date().getTime(), 'awsd');
         await loadProjects(user);
-        displayGraph(0);
+        if (datas.length > 0){
+            displayGraph(0);
+        }
     }
 })
 
 }
 
-function recalculate(){
 
-}
 
 
 
@@ -38,6 +38,7 @@ function displayGraph(index) {
     var ctx = document.getElementById('chart')
     var project = datas[index];
     log(datas);
+    log(index)
     var data = {
         labels:[],
         datasets:[
@@ -101,6 +102,9 @@ function displayGraph(index) {
 
 }
 
+function updateDashBoard(index){
+
+}
 
 
 async function loadProjects(user){
@@ -111,10 +115,35 @@ async function loadProjects(user){
                 data = doc.data();
                 data["id"] = doc.id; 
                 datas.push(data);
-
             })
         });
+    
+    const container = document.getElementById("project-container");
+    if (container){
+        var str = "";
+
+        for (var i = 0; i < datas.length; i++){
+            str =str + `<div >
+            <div style="margin: 8px" id=${i}
+              class="uk-card uk-height-small uk-width-small uk-margin-small-right uk-card-default uk-card-body">
+              <h5 style="text-align: center">${datas[i]['name']}</h5>
+            </div>
+          </div>`
+        }
+        container.innerHTML = str;
+        for (var i = 0; i < datas.length; i++){
+            log(i);
+            document.getElementById(`${i}`).addEventListener('click', e=>{
+                currentProject = i;
+                displayGraph(i);
+                updateDashBoard(i);
+                
+            });
+        }
+    }
 }
+
+
 const newButt = document.getElementById("newproject-button");
 
 if (newButt){
