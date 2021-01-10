@@ -79,3 +79,19 @@ h2 {
   text-decoration: underline;
   text-decoration-color: #00a896;
 }
+
+@media (max-width: 900px) {
+  #header-img {
+    width: 80%;
+  }
+
+  #header-h1 {
+    margin-top: 0;
+    font-size: 2vw;
+  }
+
+  #header-h3 {
+    margin-top: 0;
+    font-size: 1vw;
+  }
+}
