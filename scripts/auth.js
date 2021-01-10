@@ -14,13 +14,13 @@ signupButton.addEventListener("click", e => {
     //get info 
     const pass = document.getElementById("signup-password").value;
     const email = document.getElementById("signup-email").value;
+    const name = document.getElementById("signup-name").value;
 
     //sign up user
     auth.createUserWithEmailAndPassword(email, pass).then(cred => {
-        console.log(cred.user);
-        
+        cred.user.updateProfile({displayName:name});
         //redir to main page
-        window.location.replace("app.html");
+        window.location.href ="app.html";
     }).catch(err =>{
             window.alert(`${err.message}"`);
     });
